@@ -11,11 +11,11 @@ func panil(err error) {
 	}
 }
 
-func updateBookmarks(title string) {	
+func updateBookmarks(title string) {
 	home, err := os.UserHomeDir()
 	panil(err)
-	
-	home+="/.bookmarks"
+
+	home += "/.bookmarks"
 	f, err := os.OpenFile(home, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	panil(err)
 	defer f.Close()
